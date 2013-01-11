@@ -8,4 +8,9 @@ FactoryGirl.define do
   sequence :random_string do |n|
     rand(10**10).to_s
   end
+
+  factory :scraper do
+    title { generate(:random_string) }
+    code { generate(:random_string) }
+  end
 end

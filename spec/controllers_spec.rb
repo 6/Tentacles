@@ -39,4 +39,26 @@ describe App do
       end
     end
   end
+
+  describe "GET /scrapers/:id" do
+    def go!(id)
+      get "/scrapers/#{id}"
+    end
+
+    context "with a valid ID" do
+      it "returns ok" do
+        scraper = FactoryGirl.create(:scraper)
+        go!(scraper.id)
+        last_response.should be_ok
+      end
+    end
+
+    context "with an invalid ID" do
+      it "returns not found" do
+        invalid_id = 123
+        go!(invalid_id)
+        last_response.should be_not_found
+      end
+    end
+  end
 end
