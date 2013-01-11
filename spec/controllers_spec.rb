@@ -61,4 +61,47 @@ describe App do
       end
     end
   end
+
+  describe "PUT /scrapers/:id" do
+    let(:scraper) { FactoryGirl.create(:scraper) }
+
+    def go!(params = {})
+      put "/scrapers/#{scraper.id}", params
+      scraper.reload
+    end
+
+    context "with valid params" do
+      let :params do
+        {
+          :title => "Title",
+          :code => "some code",
+        }
+      end
+
+      it "updates scraper attributes" do
+        go!(params)
+        scraper.title.should == params[:title]
+        scraper.code.should == params[:code]
+      end
+
+      it "redirects to the scraper path" do
+        go!(params)
+        last_response.should be_redirect
+        follow_redirect!
+        last_request.path.should == scraper.path
+      end
+    end
+
+    context "with invalid params" do
+      it "does not update Scraper attributes" do
+        go!(:title => nil, :code => "new code")
+        scraper.code.should_not == "new code"
+      end
+
+      it "returns bad request" do
+        go!
+        last_response.status.should == 400
+      end
+    end
+  end
 end
