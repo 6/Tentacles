@@ -1,14 +1,19 @@
 class App < Sinatra::Base
+  error ActiveRecord::RecordNotFound do
+    404
+  end
+
   get '/' do
     haml :index
   end
 
+  get '/scrapers/new' do
+    haml :'scrapers/new'
+  end
+
   get '/scrapers/:id' do
-    begin
-      @scraper = Scraper.find(params[:id])
-    rescue
-      404
-    end
+    @scraper = Scraper.find(params[:id])
+    haml :'scrapers/show'
   end
 
   post '/scrapers' do

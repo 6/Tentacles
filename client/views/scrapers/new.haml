@@ -1,0 +1,7 @@
+%form{:method => "POST", :action => "/scrapers"}
+  %p
+    %input{:type => "text", :name => "title", :placeholder => "Enter a name for the scraper"}
+  %p
+    %textarea{:name => "code", :placeholder => "Code"}
+  %p
+    %input.btn{:type => "Submit", :value => "Create Scraper"}
