@@ -4,7 +4,7 @@ require 'sinatra/activerecord'
 require 'json'
 
 ENV['RACK_ENV'] ||= 'development'
-ENV['DATABASE_URL'] ||= "postgres://postgres@localhost/sinatra_backbone_#{ENV['RACK_ENV']}"
+ENV['DATABASE_URL'] ||= "postgres://postgres@localhost/tentacles_#{ENV['RACK_ENV']}"
 
 db = URI.parse(ENV['DATABASE_URL'])
 
