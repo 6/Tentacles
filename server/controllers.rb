@@ -8,6 +8,7 @@ class App < Sinatra::Base
   end
 
   get '/scrapers/new' do
+    @scraper = Scraper.new
     haml :'scrapers/new'
   end
 
@@ -16,12 +17,17 @@ class App < Sinatra::Base
     haml :'scrapers/show'
   end
 
+  get '/scrapers/:id/edit' do
+    @scraper = Scraper.find(params[:id])
+    haml :'scrapers/edit'
+  end
+
   post '/scrapers' do
     @scraper = Scraper.new(:title => params[:title], :code => params[:code])
     if @scraper.save
       redirect @scraper.path
     else
-      400
+      haml :'scrapers/new'
     end
   end
 
@@ -30,7 +36,7 @@ class App < Sinatra::Base
     if @scraper.update_attributes(:title => params[:title], :code => params[:code])
       redirect @scraper.path
     else
-      400
+      haml :'scrapers/edit'
     end
   end
 end

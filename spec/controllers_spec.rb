@@ -32,11 +32,6 @@ describe App do
       it "does not create a new Scraper" do
         expect { go! }.not_to change { Scraper.count }
       end
-
-      it "returns bad request" do
-        go!
-        last_response.status.should == 400
-      end
     end
   end
 
@@ -96,11 +91,6 @@ describe App do
       it "does not update Scraper attributes" do
         go!(:title => nil, :code => "new code")
         scraper.code.should_not == "new code"
-      end
-
-      it "returns bad request" do
-        go!
-        last_response.status.should == 400
       end
     end
   end
