@@ -4,4 +4,5 @@
   %p
     %textarea{:name => "code", :placeholder => "Code"}= @scraper.code
   %p
-    %input.btn{:type => "Submit", :value => "Create Scraper"}
+    %input.btn.btn-primary{:type => "Submit", :value => "Create Scraper"}
+    %a.btn{:href => @scraper.cancel_path} Cancel
