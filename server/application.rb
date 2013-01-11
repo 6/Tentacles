@@ -4,7 +4,7 @@ require 'sinatra/activerecord'
 require 'json'
 
 ENV['RACK_ENV'] ||= 'development'
-ENV['DATABASE_URL'] ||= "postgres://postgres@localhost/sinatra_backbone_#{ENV['RACK_ENV']}"
+ENV['DATABASE_URL'] ||= "postgres://postgres@localhost/tentacles_#{ENV['RACK_ENV']}"
 
 db = URI.parse(ENV['DATABASE_URL'])
 
@@ -29,6 +29,11 @@ ActiveRecord::Base.establish_connection(DB_SETTINGS)
 end
 
 set :sprockets, SprocketsEnvironmentBuilder.build(ENV['RACK_ENV'])
+
+configure :production, :test do
+  set :raise_errors, false
+  set :show_exceptions, false
+end
 
 configure :production do
   require 'newrelic_rpm'
