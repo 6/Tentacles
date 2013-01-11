@@ -25,7 +25,7 @@ class App < Sinatra::Base
     end
   end
 
-  put '/scrapers/:id' do
+  post '/scrapers/:id' do
     @scraper = Scraper.find(params[:id])
     if @scraper.update_attributes(:title => params[:title], :code => params[:code])
       redirect @scraper.path

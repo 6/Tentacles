@@ -62,11 +62,11 @@ describe App do
     end
   end
 
-  describe "PUT /scrapers/:id" do
+  describe "POST /scrapers/:id" do
     let(:scraper) { FactoryGirl.create(:scraper) }
 
     def go!(params = {})
-      put "/scrapers/#{scraper.id}", params
+      post "/scrapers/#{scraper.id}", params
       scraper.reload
     end
 
