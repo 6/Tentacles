@@ -1,3 +1,4 @@
+ENV['RACK_ENV'] = 'test'
 require 'rack/test'
 require './server/application.rb'
 require 'webmock/rspec'
