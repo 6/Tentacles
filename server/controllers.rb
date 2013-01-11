@@ -4,6 +4,10 @@ class App < Sinatra::Base
   end
 
   get '/' do
+    @page = params[:page] || 1
+    per_page = 10
+    @page_count = (Scraper.count.to_f / per_page).ceil
+    @scrapers = Scraper.order('updated_at DESC').limit(per_page).offset((@page - 1) * per_page).all
     haml :index
   end
 
