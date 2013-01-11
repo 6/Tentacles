@@ -30,6 +30,11 @@ end
 
 set :sprockets, SprocketsEnvironmentBuilder.build(ENV['RACK_ENV'])
 
+configure :production, :test do
+  set :raise_errors, false
+  set :show_exceptions, false
++end
+
 configure :production do
   require 'newrelic_rpm'
   # Ensure the agent is started using Unicorn
