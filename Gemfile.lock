@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/6/RaaS-gem.git
+  revision: 5dec99b2fa07a49ab78e849e06c36107265656b2
+  specs:
+    RaaS (0.0.1)
+      activesupport
+      andand
+      rest-client
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -17,6 +26,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.2.8)
+    andand (1.3.3)
     arel (3.0.2)
     backports (2.5.1)
     bootstrap-sass (2.1.1.0)
@@ -72,6 +82,7 @@ GEM
       rb-fchange (~> 0.0.5)
       rb-fsevent (~> 0.9.1)
       rb-inotify (~> 0.8.8)
+    mime-types (1.19)
     multi_json (1.5.0)
     newrelic_rpm (3.4.0.1)
     open4 (1.3.0)
@@ -90,6 +101,8 @@ GEM
       ffi (>= 0.5.0)
     rerun (0.7.1)
       listen
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.10.0)
       rspec-core (~> 2.10.0)
       rspec-expectations (~> 2.10.0)
@@ -149,6 +162,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RaaS!
   activerecord
   bootstrap-sass
   coffee-script

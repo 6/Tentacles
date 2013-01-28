@@ -9,6 +9,7 @@ gem 'less'
 gem 'newrelic_rpm'
 gem 'pg'
 gem 'rake'
+gem 'RaaS', :git => "git://github.com/6/RaaS-gem.git"
 gem 'sass'
 gem 'sinatra'
 gem 'sinatra-activerecord'
