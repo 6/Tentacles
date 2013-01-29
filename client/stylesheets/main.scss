@@ -47,3 +47,13 @@ header {
     }
   }
 }
+
+.browse-list {
+  margin-top: 20px;
+  tbody {
+    background: #fff;
+    .scraper-link {
+      font-size: 20px;
+    }
+  }
+}

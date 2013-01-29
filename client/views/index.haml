@@ -1,7 +1,18 @@
-%ol
-  - @scrapers.each do |scraper|
-    %li
-      %a{:href => scraper.path}= scraper.title
+%table.table.table-hover.browse-list
+  %thead
+    %tr
+      %th Status
+      %th Name
+      %th Created
+      %th Updated
+  %tbody
+    - @scrapers.each do |scraper|
+      %tr
+        %td TODO
+        %td
+          %a.scraper-link{:href => scraper.path}= scraper.title
+        %td= scraper.created_at
+        %td= scraper.updated_at
 
 
 - if @page > 1
