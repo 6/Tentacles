@@ -4,6 +4,7 @@ gem 'activerecord'
 gem 'bootstrap-sass'
 gem 'coffee-script'
 gem 'compass'
+gem 'execjs'
 gem 'haml'
 gem 'less'
 gem 'newrelic_rpm'
@@ -22,7 +23,6 @@ gem 'unicorn'
 gem 'yui-compressor'
 
 group :assets do
-  gem 'execjs'
   gem 'haml_coffee_assets'
 end
 
