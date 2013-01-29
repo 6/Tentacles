@@ -34,7 +34,7 @@ header {
       float:left;
       display:block;
       &:hover {
-        background: #f5f5f5;
+        background: #fafafa;
         color: #333;
         text-decoration: none;
       }
@@ -42,7 +42,7 @@ header {
         background: #eaeaea;
       }
       &.on {
-        background: #fafafa;
+        background: #f5f5f5;
       }
     }
   }
