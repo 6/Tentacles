@@ -1,10 +1,10 @@
 %table.table.table-hover.browse-list
   %thead
     %tr
-      %th Status
-      %th Name
-      %th Created
-      %th Updated
+      %th= link_to_order("Status", "/", "status")
+      %th= link_to_order("Name", "/", "name")
+      %th= link_to_order("Created", "/", "created_at")
+      %th= link_to_order("Updated", "/", "updated_at")
   %tbody
     - @scrapers.each do |scraper|
       %tr

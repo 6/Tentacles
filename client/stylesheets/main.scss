@@ -50,6 +50,11 @@ header {
 
 .browse-list {
   margin-top: 20px;
+  thead {
+    .on {
+      color: #000;
+    }
+  }
   tbody {
     background: #fff;
     .scraper-link {

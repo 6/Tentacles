@@ -25,5 +25,23 @@ class App < Sinatra::Base
         "<a href='#{href}'>#{text}</a>"
       end
     end
+
+    # TODO: cleanup
+    def link_to_order(text, href, order)
+      if params['dir'] == 'asc'
+        direction = 'desc'
+        arrow = '&#x25B2;'
+      else
+        direction = 'asc'
+        arrow = '&#x25BC;'
+      end
+
+      link = "#{href}?order=#{order}&dir=#{direction}"
+      if request.params['order'] == order
+        "<a class='on' href='#{link}'>#{text}&nbsp;#{arrow}</a>"
+      else
+        "<a href='#{link}'>#{text}</a>"
+      end
+    end
   end
 end
