@@ -5,9 +5,12 @@ class App < Sinatra::Base
 
   get '/' do
     @page = params[:page] || 1
+    order = %w[created_at updated_at title status].include?(params[:order]) ? params[:order] : 'updated_at'
+    direction = %w[desc asc].include?(params[:dir]) ? params[:dir] : 'desc'
+
     per_page = 10
     @page_count = (Scraper.count.to_f / per_page).ceil
-    @scrapers = Scraper.order('updated_at DESC').limit(per_page).offset((@page - 1) * per_page).all
+    @scrapers = Scraper.order("#{order} #{direction}").limit(per_page).offset((@page - 1) * per_page).all
     haml :index
   end
 
