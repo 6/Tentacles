@@ -9,6 +9,6 @@
   %header.clearfix
     %img.icon{:src => "/images/icon-author-is-yumcha.png"}
     %nav.clearfix
-      %a{:href => "/"} Browse
-      %a{:href => "/scrapers/new"} New Scraper
+      = link_to "Browse", "/"
+      = link_to "New Scraper", "/scrapers/new"
   %section.main= yield

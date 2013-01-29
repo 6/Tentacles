@@ -16,5 +16,14 @@ class App < Sinatra::Base
       end
       halt status, headers.merge({'Content-Type' => 'application/json'}), body
     end
+
+    # TODO: improve this method
+    def link_to(text, href)
+      if request.path_info == href
+        "<a class='on' href='#{href}'>#{text}</a>"
+      else
+        "<a href='#{href}'>#{text}</a>"
+      end
+    end
   end
 end
