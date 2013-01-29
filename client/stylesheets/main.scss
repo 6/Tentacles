@@ -6,6 +6,41 @@ html, body {
 }
 
 body {
-  color: darken(#f00, 20%);
   @include gradientBar(#fff, #fdf);
+  color: #444;
+  text-shadow: none;
+}
+
+header {
+  $header-height: 64px;
+  background: #fff;
+  line-height: $header-height;
+  padding: 0 20px;
+  @include box-shadow( 0 1px 1px rgba(0,0,0,.1));
+  .icon {
+    width: 44px;
+    height: 44px;
+    float: left;
+    margin-top: 10px;
+  }
+  nav {
+    margin-left: 20px;
+    float: left;
+    a {
+      padding: 0 16px;
+      color: #888;
+      font-size: 20px;
+      line-height: $header-height;
+      float:left;
+      display:block;
+      &:hover {
+        background: #f9f9f9;
+        color: #333;
+        text-decoration: none;
+      }
+      &:active {
+        background: #eaeaea;
+      }
+    }
+  }
 }

@@ -5,4 +5,10 @@
   %link{:rel => "stylesheet", :href => "/assets/application.css"}
   %script{:src => "/assets/application.js"}
   = yield_content :custom_head
-%body= yield
+%body
+  %header.clearfix
+    %img.icon{:src => "/images/icon-author-is-yumcha.png"}
+    %nav.clearfix
+      %a{:href => "/"} Browse
+      %a{:href => "/scrapers/new"} New Scraper
+  %section.main= yield
