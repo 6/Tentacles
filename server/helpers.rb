@@ -30,10 +30,10 @@ class App < Sinatra::Base
     def link_to_order(text, href, order)
       if params['dir'] == 'asc'
         direction = 'desc'
-        arrow = '&#x25B2;'
+        arrow = '&#x25BC;'
       else
         direction = 'asc'
-        arrow = '&#x25BC;'
+        arrow = '&#x25B2;'
       end
 
       link = "#{href}?order=#{order}&dir=#{direction}"
