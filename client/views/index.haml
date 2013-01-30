@@ -15,8 +15,9 @@
         %td= scraper.updated_at
 
 
-- if @page > 1
-  %a{:href => "/?page=#{@page - 1}"} Prev
-= "Page #{@page} of #{@page_count}"
-- if @page < @page_count
-  %a{:href => "/?page=#{@page + 1}"} Next
+.pagination
+  - if @page > 1
+    %a{:href => "/?page=#{@page - 1}"} Prev
+  = "Page #{@page} of #{@page_count}"
+  - if @page < @page_count
+    %a{:href => "/?page=#{@page + 1}"} Next
