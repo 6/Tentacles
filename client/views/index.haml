@@ -11,8 +11,8 @@
         %td TODO
         %td
           %a.scraper-link{:href => scraper.path}= scraper.title
-        %td= scraper.created_at
-        %td= scraper.updated_at
+        %td= scraper.created_at.strftime("%Y/%m/%d %H:%M")
+        %td= scraper.updated_at.strftime("%Y/%m/%d %H:%M")
 
 
 .pagination
