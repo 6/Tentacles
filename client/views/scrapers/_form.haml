@@ -1,8 +1,25 @@
-%form{:method => "POST", :action => @scraper.path}
-  %p
-    %input{:type => "text", :name => "title", :placeholder => "Enter a name for the scraper", :value => @scraper.title}
-  %p
-    %textarea{:name => "code", :placeholder => "Code", :rows => 8}= @scraper.code
-  %p
-    %input.btn.btn-primary{:type => "Submit", :value => "Save"}
-    %a.btn{:href => @scraper.cancel_path} Cancel
+%form.scraper-form{:method => "POST", :action => @scraper.path}
+  .form-bar
+    %input.title{:type => "text", :name => "title", :placeholder => "Enter a name for the scraper", :value => @scraper.title}
+    .buttons
+      %input.btn.btn-primary{:type => "Submit", :value => "Save"}
+      %a.btn{:href => @scraper.cancel_path} Cancel
+
+  #code-editor<
+    = preserve do
+      = @scraper.code
+  %textarea.code-input{:name => "code"}<= @scraper.code
+
+%script{:src => "http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"}
+:javascript
+  var editor = ace.edit("code-editor");
+  editor.setTheme("ace/theme/textmate");
+  editor.setHighlightActiveLine(false);
+  editor.getSession().setUseSoftTabs(true);
+  editor.getSession().setTabSize(2);
+  editor.getSession().setMode("ace/mode/javascript");
+
+  var $textarea = $(".code-input");
+  editor.getSession().on('change', function(){
+    $textarea.val(editor.getSession().getValue());
+  });
