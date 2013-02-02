@@ -1,13 +1,24 @@
 %form.scraper-form{:method => "POST", :action => @scraper.path}
-  .form-bar
-    %input.title{:type => "text", :name => "title", :placeholder => "Enter a name for the scraper", :value => @scraper.title}
+  .form-bar.clearfix
+    .inputs
+      %label{:for => "title"} Enter a name for the scraper
+      %input.title{:type => "text", :name => "title", :value => @scraper.title}
     .buttons
       %input.btn.btn-primary{:type => "Submit", :value => "Save"}
       %a.btn{:href => @scraper.cancel_path} Cancel
 
-  #code-editor<
-    = preserve do
-      = @scraper.code
+  .preview-bar.clearfix
+    .inputs
+      %label{:for => "url"} Run the scraper on a URL
+      %input.url{:type => "text", :name => "url", :placeholder => "http://"}
+      %input.btn.submit-url{:type => "button", :value => "Run"}
+
+  .code
+    #code-editor<
+      = preserve do
+        = @scraper.code
+    %pre#result-preview
+
   %textarea.code-input{:name => "code"}<= @scraper.code
 
 %script{:src => "http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"}
