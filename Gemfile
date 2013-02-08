@@ -1,7 +1,7 @@
 source :rubygems
 
 gem 'activerecord'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', "~> 2.1.0"
 gem 'coffee-script'
 gem 'compass'
 gem 'execjs'
