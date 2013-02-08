@@ -34,6 +34,7 @@
   }
   .preview-bar {
     @include gradientBar(#fff, #eee);
+    border-bottom: 1px solid #ccc;
     line-height: $preview-bar-height;
     color: #555;
     text-shadow: none;
@@ -46,7 +47,7 @@
   }
   .code {
     position: absolute;
-    top: $form-bar-height + $preview-bar-height;
+    top: $form-bar-height + $preview-bar-height + 1px;
     width: 100%;
     bottom: 0;
   }
