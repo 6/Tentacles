@@ -6,6 +6,7 @@ gem 'coffee-script'
 gem 'compass'
 gem 'execjs'
 gem 'haml'
+gem 'jsdom_service', :git => "git://github.com/6/jsdom-service-gem.git"
 gem 'less'
 gem 'newrelic_rpm'
 gem 'pg'

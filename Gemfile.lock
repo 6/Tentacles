@@ -7,6 +7,15 @@ GIT
       andand
       rest-client
 
+GIT
+  remote: git://github.com/6/jsdom-service-gem.git
+  revision: 95e8351cc73fcf79abe00a354e0f173e9baa87b1
+  specs:
+    jsdom_service (0.0.1)
+      activesupport
+      andand
+      rest-client
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -176,6 +185,7 @@ DEPENDENCIES
   haml
   haml_coffee_assets
   jasmine
+  jsdom_service!
   less
   newrelic_rpm
   pg
