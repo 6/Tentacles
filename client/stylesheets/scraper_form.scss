@@ -1,0 +1,78 @@
+.scraper-form {
+  $form-bar-height: 56px;
+  $preview-bar-height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  .inputs {
+    float: left;
+    label, input {
+      margin: 0;
+      display: inline;
+    }
+    label {
+      margin-right: 8px;
+    }
+  }
+  .form-bar, .preview-bar {
+    padding: 0 16px;
+  }
+  .form-bar {
+    @include gradientBar(#333, #555);
+    @include box-shadow(inset 0 3px 3px rgba(0,0,0,.3));
+    height: $form-bar-height;
+    .inputs {
+      line-height: $form-bar-height;
+    }
+    .buttons {
+      float: right;
+      line-height: $form-bar-height;
+    }
+  }
+  .preview-bar {
+    @include gradientBar(#fff, #eee);
+    line-height: $preview-bar-height;
+    color: #555;
+    text-shadow: none;
+    .inputs {
+      width: 100%;
+    }
+    .url {
+      width: 50%;
+    }
+  }
+  .code {
+    position: absolute;
+    top: $form-bar-height + $preview-bar-height;
+    width: 100%;
+    bottom: 0;
+  }
+  #code-editor {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    font-size: 15px;
+  }
+  #result-preview {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: none;
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+  .code-input {
+    display: none;
+  }
+}

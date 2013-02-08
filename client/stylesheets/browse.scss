@@ -1,0 +1,18 @@
+.browse-list {
+  margin-top: 20px;
+  thead {
+    .on {
+      color: #000;
+    }
+  }
+  tbody {
+    background: #fff;
+    .scraper-link {
+      font-size: 20px;
+    }
+  }
+}
+
+.pagination {
+  text-align: center;
+}
