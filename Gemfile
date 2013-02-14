@@ -8,7 +8,7 @@ gem 'execjs'
 gem 'haml'
 gem 'jsdom_service', :git => "git://github.com/6/jsdom-service-gem.git"
 gem 'less'
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', "~> 3.5.5.38"
 gem 'pg'
 gem 'rake'
 gem 'RaaS', :git => "git://github.com/6/RaaS-gem.git"
