@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/6/RaaS-gem.git
-  revision: 5dec99b2fa07a49ab78e849e06c36107265656b2
+  revision: f3e7f9a6b08490debac4aeba4d45d83d78781f26
   specs:
     RaaS (0.0.1)
       activesupport
@@ -93,7 +93,7 @@ GEM
     lumberjack (1.0.2)
     method_source (0.8.1)
     mime-types (1.21)
-    multi_json (1.6.0)
+    multi_json (1.6.1)
     newrelic_rpm (3.5.5.38)
     open4 (1.3.0)
     pg (0.14.1)
